@@ -1,0 +1,52 @@
+---
+ru:
+    ourGoal: Наша цель
+    ourGoalSub: Сократить младенческую и детскую смертность и инвалидность в казахстане
+    care: Сила заботы Fondqumai в цифрах
+    goToReports: Перейти к отчетности
+    news: Новости
+    goToNews: Больше новостей
+
+kz:
+    ourGoal: Біздің мақсат
+    ourGoalSub: Қазақстандағы сәбилер мен балалар өлімі мен мүгедектігін қысқарту
+    care: Fondqumai қамқорлығының күші цифрлармен
+    goToReports: Есептілікке өту
+    news: Жаңалықтар
+    goToNews: Ауқымды жаңалық
+---
+
+section
+    .max-w-screen-xl.w-full.mx-auto
+        div(style="background-image: url(/assets/img/happy-kid.jpg)").px-4.py-8.h-72.bg-cover.bg-center
+            h2.text-2xl.font-medium.mb-4.text-center.text-primary-blue= ourGoal
+            p.text-center= ourGoalSub
+
+section.py-8.bg-gray-100
+    .max-w-screen-xl.w-full.mx-auto.px-4
+        .flex.flex-col.items-center
+            h2.text-xl.font-medium.mb-8.text-center.text-primary-blue= care
+
+            .space-y-4.mb-8
+                .bg-white.p-4.shadow-xl.rounded-xl.h-36.flex.flex-col.justify-between.gap-2
+                    p.text-center.text-sm.text-gray-500 Более
+                    p.text-center.text-3xl.text-gray-500.font-bold 2500
+                    p.text-center.text-sm.text-gray-500 детей посещают ежегодно мастерские оборудованные фондом
+
+            a(href=`/${lang}/reports`).bg-primary-blue.px-4.py-2.rounded-xl.text-white= goToReports
+
+section.py-8
+    .max-w-screen-xl.w-full.mx-auto.px-4
+        .flex.flex-col.items-center
+            h2.text-2xl.font-medium.mb-8.text-center.text-primary-blue= news
+
+            .space-y-4.mb-8
+                .p-4.border.rounded-xl.w-full.leading-5.space-y-2
+                    p.text-sm.text-gray-500 22.11.2022
+                    p.font-medium Оборудование для спасения новорожденных получил роддом атырау
+                    p.text-sm.text-gray-500 Через Отделение патологии новорожденных Атырауского городского роддома ежегодно проходит более 270 детей. Для помощи врачам в выхаживании новорожденных при сложных...
+
+            a(href=`/${lang}/news`).bg-gray-100.px-4.py-2.rounded-xl.text-primary-blue.flex.items-center.gap-2
+                span= goToNews
+                i.fa-solid.fa-arrow-right.text-sm
+
