@@ -19,7 +19,7 @@ jobs:
       - name: Build gh-pages
         run: |
           deno --version
-          deno task build
+          build
 
       - name: Deploy gh-pages
         uses: peaceiris/actions-gh-pages@v3
