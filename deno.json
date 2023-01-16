@@ -3,6 +3,7 @@
   "tasks": {
     "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
     "build": "deno task lume",
+    "build:gh": "deno task lume --location=https://daurensky.github.io/fondqumai/",
     "serve": "deno task lume -s"
   }
 }
