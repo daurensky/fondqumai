@@ -16,7 +16,7 @@ site.use(
         extend: {
           colors: {
             primary: {
-              blue: '#008dd2',
+              blue: '#0abab5',
             },
           },
           fontFamily: {
