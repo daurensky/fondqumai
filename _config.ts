@@ -6,6 +6,7 @@ import tailwindcss from 'lume/plugins/tailwindcss.ts'
 
 const site = lume({
   src: './src',
+  location: new URL("https://daurensky.github.io/fondqumai"),
 })
 
 site.use(
