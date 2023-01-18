@@ -1,6 +1,7 @@
 ---
 ru:
-    createdFor: 'Фонд социального развития "Құмай" - некоммерческая организация, созданная с целью'
+    aboutFond: О фонде
+    createdFor: '<b>"Фонд социального развития "Құмай"</b> - некоммерческая организация, созданная с целью'
     goals:
       - title: удовлетворения профессиональных и любительских интересов граждан;
         icon: lightbulb
@@ -15,13 +16,18 @@ ru:
         - 'На протяжении нескольких лет с помощью социальных сетей на постоянной основе мною была оказана материальная помощь: бездомным животным, детям, оставшимся без попечения родителей, матерям-одиночкам, малоимущим семьям, больным детям, в связи с этим зародилась идея открыть фонд.'
         - 'Благотворительность- проявление сострадания к ближнему и нравственная обязанность имущего спешить на помощь неимущему.'
         - 'У вас может не быть ресурсов, чтобы накормить тысячу людей, но если вы с любовью накормите одного человека или животного, то в целом жизнь прожита не зря.'
-        - '"Не все из нас могут делать великие дела. Но мы можем делать маленькие дела с большой любовью". - Мать Тереза'
-    quoteAuthor: 
-        name: Имамбаева Адель Назымбековна
-        pos: 'Президент ЧФ "Фонд социального развития "Құмай"'
+        - 'Как сказала мать Тереза: "Не все из нас могут делать великие дела. Но мы можем делать маленькие дела с большой любовью"'
+    quoteAuthor: Президент ЧФ “Фонд социального развития “Құмай” - Имамбаева Адель Назымбековна.
+
+    ourProjects: Наши проекты
+
+    presidentSay: Обращение президента
+
+    ourLetters: Благодарственные письма
 
 kz:
-    createdFor: 'Фонд социального развития "Құмай" - некоммерческая организация, созданная с целью'
+    aboutFond: О фонде
+    createdFor: '<b>"Фонд социального развития "Құмай"</b> - некоммерческая организация, созданная с целью'
     goals:
       - title: удовлетворения профессиональных и любительских интересов граждан;
         icon: lightbulb
@@ -34,31 +40,61 @@ kz:
     quotes:
         - 'Быть благотворителем можно независимо от возраста, материального достатка и физических способностей. Мое знакомство с благотворительностью началось еще в школе. Мы с классом ходили в детские дома переодеваясь в аниматоров и устраивали культурно-развлекательные мероприятия. На 9 мая убирались в домах участников Великой Отечественной Войны, давали концерты в доме престарелых.'
         - 'На протяжении нескольких лет с помощью социальных сетей на постоянной основе мною была оказана материальная помощь: бездомным животным, детям, оставшимся без попечения родителей, матерям-одиночкам, малоимущим семьям, больным детям, в связи с этим зародилась идея открыть фонд.'
-        - 'Благотворительность - проявление сострадания к ближнему и нравственная обязанность имущего спешить на помощь неимущему.'
+        - 'Благотворительность- проявление сострадания к ближнему и нравственная обязанность имущего спешить на помощь неимущему.'
         - 'У вас может не быть ресурсов, чтобы накормить тысячу людей, но если вы с любовью накормите одного человека или животного, то в целом жизнь прожита не зря.'
-        - '"Не все из нас могут делать великие дела. Но мы можем делать маленькие дела с большой любовью". - Мать Тереза'
-    quoteAuthor: 
-        name: Имамбаева Адель Назымбековна
-        pos: 'Президент ЧФ "Фонд социального развития "Құмай"'
+        - 'Как сказала мать Тереза: "Не все из нас могут делать великие дела. Но мы можем делать маленькие дела с большой любовью"'
+    quoteAuthor: Президент ЧФ “Фонд социального развития “Құмай” - Имамбаева Адель Назымбековна.
+
+    ourProjects: Наши проекты
+
+    presidentSay: Обращение президента
+
+    ourLetters: Благодарственные письма
+
+letters:
+  - thumb: '/assets/img/letter-1-thumb.jpg'
+    original: '/assets/pdf/letter-1.pdf'
+  - thumb: '/assets/img/letter-2-thumb.jpg'
+    original: '/assets/pdf/letter-2.pdf'
 ---
 
-section.py-8
+section(class="sm:py-16").py-8.space-y-8
     .max-w-screen-xl.w-full.mx-auto.px-4
-        h2.text-2xl.font-medium.mb-8.text-center.text-primary-blue О фонде
+        h2.text-2xl.font-bold.mb-8.text-center.text-primary-tiffany.font-rubik= aboutFond
 
-        h3.mb-2= createdFor
+        div(class="sm:flex-row-reverse").flex.flex-col.gap-8
+            .w-full
+                img(src="/assets/img/about-banner.jpeg").rounded-tr-3xl.rounded-bl-3xl
 
-        ul.space-y-2.mb-8
-            each goal in goals
-                li
-                    i(class=`fa-solid fa-${goal.icon} w-5 mr-2 text-primary-blue`)
-                    span= goal.title
+            .w-full.space-y-2
+                p!= createdFor
 
-        i.fa-solid.fa-quote-left.text-2xl.text-primary-blue
+                ul.space-y-2
+                    each goal in goals
+                        li
+                            i(class=`fa-solid fa-${goal.icon} w-5 mr-2 text-primary-gray`)
+                            span= goal.title
+        
+section(class="sm:py-16").py-8
+    .max-w-screen-xl.w-full.mx-auto.px-4
+        h2.text-2xl.font-bold.mb-8.text-center.text-primary-tiffany.font-rubik= presidentSay
 
-        .border-l-4.pl-4.border-gray-300.space-y-4.mb-4
-            each quote in quotes
-                p.break-words= quote
+        div(class="sm:flex-row").flex.flex-col.gap-8
+            div(class="sm:w-1/3 sm:shrink-0").w-full
+                img(src="/assets/img/president.jpg").rounded-tr-3xl.rounded-bl-3xl
 
-        p.font-medium.text-right.text-gray-700= quoteAuthor.name
-        p.text-gray-500.text-right.text-sm= quoteAuthor.pos
+            .space-y-4
+                .border-l-4.pl-4.border-primary-white.space-y-4
+                    each quote in quotes
+                        p.break-words= quote
+
+                p.font-medium.text-right.text-gray-700.font-rubik.text-primary-gray= quoteAuthor
+
+section(class="sm:py-16").py-8
+    .max-w-screen-xl.w-full.mx-auto.px-4
+        h2.text-2xl.font-bold.mb-8.text-center.text-primary-tiffany.font-rubik= ourLetters
+
+        .flex.gap-4.justify-center
+            each letter in letters
+                a(href=letter.original target="_blank")
+                    img(src=letter.thumb).rounded.shadow.border.border-primary-white.max-h-72

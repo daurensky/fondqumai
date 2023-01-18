@@ -1,0 +1,26 @@
+---
+layout: default-layout.pug
+title: No title
+image: No image
+description:
+  - No description
+---
+
+section(class="sm:py-16").py-8
+    .max-w-screen-xl.w-full.mx-auto.px-4
+        h2.text-2xl.font-bold.mb-8.text-center.text-primary-tiffany.font-rubik= title
+
+        div(class="sm:flex-row").flex.flex-col.gap-4
+            div(class="sm:w-[400px] sm:shrink-0").w-full
+                img(src=image).rounded-bl-3xl.rounded-tr-3xl.w-full.h-full.object-cover
+
+            .space-y-4
+                each item in description
+                    if typeof item === 'string'
+                        p!= item
+                    else if typeof item === 'object' && 'list' in item
+                        ul.space-y-2
+                            each line in item.list
+                                li.flex.gap-2.items-start.ml-2
+                                    img(src='/assets/img/icon.png' width=16).mt-1
+                                    span= line

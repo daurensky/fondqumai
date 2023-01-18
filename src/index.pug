@@ -16,37 +16,49 @@ kz:
     goToNews: Ауқымды жаңалық
 ---
 
-section
+section(style="background-image: url(/assets/img/happy-kid.jpg)" class="sm:h-[388px] sm:py-16").bg-cover.bg-bottom.h-72
     .max-w-screen-xl.w-full.mx-auto
-        div(style="background-image: url(/assets/img/happy-kid.jpg)").px-4.py-8.h-72.bg-cover.bg-center
-            h2.text-2xl.font-medium.mb-4.text-center.text-primary-blue= ourGoal
-            p.text-center= ourGoalSub
+        div(class="sm:w-1/2 sm:ml-auto sm:pt-24 sm:pl-16").px-4.py-12
+            h2(class="sm:text-left sm:text-3xl").text-2xl.font-medium.mb-2.text-center.text-primary-tiffany.font-rubik= ourGoal
+            p(class="sm:text-left sm:text-xl").text-center= ourGoalSub
 
-section.py-8.bg-gray-100
+//- section(class="sm:py-16").py-8
+//-     .max-w-screen-xl.w-full.mx-auto.px-4
+//-         .flex.flex-col.items-center
+//-             h2.text-2xl.font-medium.mb-8.text-center.text-primary-tiffany.font-rubik= care
+
+//-             .space-y-4.mb-8
+//-                 .bg-white.p-4.shadow-xl.rounded-xl.h-36.flex.flex-col.justify-between.gap-2
+//-                     p.text-center.text-sm.text-gray-500 Более
+//-                     p.text-center.text-3xl.text-gray-500.font-bold 2500
+//-                     p.text-center.text-sm.text-gray-500 детей посещают ежегодно мастерские оборудованные фондом
+
+//-             a.bg-primary-white.p-4.font-rubik.rounded-xl.text-primary-gray.flex.items-center.gap-2
+//-                 span= goToReports
+//-                 i.fa-solid.fa-arrow-right.text-sm
+
+section(class="sm:py-16").py-8
     .max-w-screen-xl.w-full.mx-auto.px-4
         .flex.flex-col.items-center
-            h2.text-xl.font-medium.mb-8.text-center.text-primary-blue= care
+            h2.text-2xl.font-medium.mb-8.text-center.text-primary-tiffany.font-rubik= news
 
-            .space-y-4.mb-8
-                .bg-white.p-4.shadow-xl.rounded-xl.h-36.flex.flex-col.justify-between.gap-2
-                    p.text-center.text-sm.text-gray-500 Более
-                    p.text-center.text-3xl.text-gray-500.font-bold 2500
-                    p.text-center.text-sm.text-gray-500 детей посещают ежегодно мастерские оборудованные фондом
-
-            a(href=`/${lang}/reports`).bg-primary-blue.px-4.py-2.rounded-xl.text-white= goToReports
-
-section.py-8
-    .max-w-screen-xl.w-full.mx-auto.px-4
-        .flex.flex-col.items-center
-            h2.text-2xl.font-medium.mb-8.text-center.text-primary-blue= news
-
-            .space-y-4.mb-8
-                .p-4.border.rounded-xl.w-full.leading-5.space-y-2
-                    p.text-sm.text-gray-500 22.11.2022
-                    p.font-medium Оборудование для спасения новорожденных получил роддом атырау
+            div(class="sm:grid-cols-3").mb-8.grid.gap-4
+                .p-4.bg-primary-white.rounded-xl.w-full.leading-5.space-y-2
+                    p.text-xs.text-gray-500 22.11.2022
+                    p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
                     p.text-sm.text-gray-500 Через Отделение патологии новорожденных Атырауского городского роддома ежегодно проходит более 270 детей. Для помощи врачам в выхаживании новорожденных при сложных...
 
-            a(href=`/${lang}/news`).bg-gray-100.px-4.py-2.rounded-xl.text-primary-blue.flex.items-center.gap-2
+                .p-4.bg-primary-white.rounded-xl.w-full.leading-5.space-y-2
+                    p.text-xs.text-gray-500 22.11.2022
+                    p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
+                    p.text-sm.text-gray-500 Через Отделение патологии новорожденных Атырауского городского роддома ежегодно проходит более 270 детей. Для помощи врачам в выхаживании новорожденных при сложных...
+
+                .p-4.bg-primary-white.rounded-xl.w-full.leading-5.space-y-2
+                    p.text-xs.text-gray-500 22.11.2022
+                    p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
+                    p.text-sm.text-gray-500 Через Отделение патологии новорожденных Атырауского городского роддома ежегодно проходит более 270 детей. Для помощи врачам в выхаживании новорожденных при сложных...
+
+            a.bg-primary-white.p-4.rounded-xl.text-primary-gray.font-rubik.flex.items-center.gap-2
                 span= goToNews
                 i.fa-solid.fa-arrow-right.text-sm
 

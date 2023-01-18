@@ -16,11 +16,15 @@ site.use(
         extend: {
           colors: {
             primary: {
-              blue: '#0abab5',
+              tiffany: '#09b8b6',
+              white: '#e9eee0',
+              gray: '#8b8778',
+              blue: '#007f9d'
             },
           },
           fontFamily: {
             rubik: ['Rubik'],
+            roboto: ['Roboto'],
           },
         },
       },
@@ -37,5 +41,6 @@ site.use(multilanguage())
 site.use(basePath())
 
 site.copy('assets/img')
+site.copy('assets/pdf')
 
 export default site
