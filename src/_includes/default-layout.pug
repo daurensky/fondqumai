@@ -57,12 +57,12 @@ html
                         i.fa-solid.fa-search.text-primary-gray
 
                     //- Desktop
-                    button(class="focus-within:text-primary-tiffany sm:block" tabindex="0").hidden.px-4.py-2.rounded-xl.bg-primary-white.relative.group.text-primary-gray
+                    button(class="sm:block" data-focusable).hidden.px-4.py-2.rounded-xl.bg-primary-white.relative.group.text-primary-gray
                         .flex.gap-2.items-center
                             span.uppercase.font-rubik.font-medium= lang
                             i.fa-solid.fa-chevron-down.text-xs
 
-                        div(class="group-focus-within:visible" tabindex="0").invisible.absolute.top-full.bg-primary-white.left-0.right-0.px-4.py-2.rounded-xl.shadow.z-10
+                        div(data-focusable-item).invisible.absolute.top-full.bg-primary-white.left-0.right-0.px-4.py-2.rounded-xl.z-10.shadow
                             each alternate in alternates
                                 if alternate.data.lang !== lang
                                     a(href= value=alternate.data.url).uppercase.block.text-primary-gray.text-left.font-medium.font-rubik= alternate.data.lang
