@@ -78,21 +78,21 @@ html
         nav.sticky.top-0.bg-primary-white
             .max-w-screen-xl.w-full.mx-auto.px-4.py-2.flex.justify-between.items-center
                 //- Mobile
-                button(class="focus-within:text-primary-tiffany sm:hidden").flex.items-center.gap-2.bg-white.rounded-xl.px-4.py-2.group.text-primary-gray
+                button(class="sm:hidden" data-focusable).flex.items-center.gap-2.bg-white.rounded-xl.px-4.py-2.group.text-primary-gray
                     i.fa-solid.fa-bars
                     span.font-rubik.font-medium Меню
                         
-                    div(class="group-focus-within:visible").invisible.absolute.top-full.left-0.right-0
+                    div(data-focusable-item).invisible.absolute.top-full.left-0.right-0
                         .bg-white.shadow.py-2
                             each page in t[lang].pages
                                 a(href=page.link class=`${page.link === url ? 'text-primary-tiffany' : 'text-primary-gray'}`).px-6.py-2.w-full.block.text-left.font-medium.font-rubik= page.title
 
-                button(class="focus-within:text-primary-tiffany sm:hidden").px-4.py-2.rounded-xl.bg-white.relative.group.text-primary-gray
+                button(class="sm:hidden" data-focusable).px-4.py-2.rounded-xl.bg-white.relative.group.text-primary-gray
                     .flex.gap-2.items-center
                         span.uppercase.font-rubik.font-medium= lang
                         i.fa-solid.fa-chevron-down.text-xs
 
-                    div(class="group-focus-within:visible").invisible.absolute.top-full.bg-white.left-0.right-0.px-4.py-2.rounded-xl.shadow.z-10
+                    div(data-focusable-item).invisible.absolute.top-full.bg-white.left-0.right-0.px-4.py-2.rounded-xl.shadow.z-10
                         each alternate in alternates
                             if alternate.data.lang !== lang
                                 a(href= value=alternate.data.url).uppercase.block.text-primary-gray.text-left.font-medium.font-rubik= alternate.data.lang
@@ -135,3 +135,5 @@ html
                 input(name="q" placeholder="Поиск").bg-white.w-full.p-4
 
             a(href="#" class="absolute top-0 left-0 right-0 bottom-0 bg-black/75 -z-10")
+
+        script(src="/assets/js/focusable.js")

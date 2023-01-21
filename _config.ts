@@ -42,5 +42,6 @@ site.use(basePath())
 
 site.copy('assets/img')
 site.copy('assets/pdf')
+site.copy('assets/js')
 
 export default site
