@@ -19,7 +19,7 @@ site.use(
               tiffany: '#09b8b6',
               white: '#e9eee0',
               gray: '#8b8778',
-              black: '#2a2a2a'
+              black: '#2a2a2a',
             },
           },
           fontFamily: {
@@ -43,5 +43,7 @@ site.use(basePath())
 site.copy('assets/img')
 site.copy('assets/pdf')
 site.copy('assets/js')
+
+site.addEventListener('afterBuild', 'cp -R _site/ru/* _site')
 
 export default site

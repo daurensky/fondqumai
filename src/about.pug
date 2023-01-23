@@ -68,7 +68,7 @@ section(class="sm:py-16").py-8.space-y-8
 
         div(class="sm:flex-row-reverse").flex.flex-col.gap-8
             .w-full
-                img(src="/assets/img/banner-2.jpg").rounded-tr-3xl.rounded-bl-3xl
+                img(src="/assets/img/banner-2.jpg" alt="Banner").rounded-tr-3xl.rounded-bl-3xl
 
             .w-full.space-y-2
                 p!= createdFor
@@ -85,7 +85,7 @@ section(class="sm:py-16").py-8
 
         div(class="sm:flex-row").flex.flex-col.gap-8
             div(class="sm:w-1/3 sm:shrink-0").w-full
-                img(src="/assets/img/president.jpg").rounded-tr-3xl.rounded-bl-3xl
+                img(src="/assets/img/president.jpg" alt="Foundation president").rounded-tr-3xl.rounded-bl-3xl
 
             .space-y-4
                 .border-l-4.pl-4.border-primary-white.space-y-4
@@ -101,4 +101,4 @@ section(class="sm:py-16").py-8
         .flex.gap-4.justify-center
             each letter in letters
                 a(href=letter.original target="_blank")
-                    img(src=letter.thumb).rounded.shadow.border.border-primary-white.max-h-72
+                    img(src=letter.thumb alt="Thanksgiving letters").rounded.shadow.border.border-primary-white.max-h-72

@@ -13,13 +13,13 @@ section(class="sm:py-16").py-8
 
         div(class="sm:flex-row sm:items-start").flex.flex-col.gap-8
             a(href=mainImage target="_blank" class="sm:w-[400px] sm:shrink-0 hover:opacity-90 sm:h-max").w-full
-                img(src=mainImage).rounded-bl-3xl.rounded-tr-3xl.w-full.h-full.object-cover
+                img(src=mainImage alt="Project photography").rounded-bl-3xl.rounded-tr-3xl.w-full.h-full.object-cover
 
             .flex.flex-col.gap-8
                 .flex.gap-4.overflow-auto
                     each image in images
                         a(href=image target="_blank" class="hover:opacity-90").h-40.shrink-0
-                            img(src=image).w-full.h-full.object-cover.rounded-xl
+                            img(src=image alt="Project photography").w-full.h-full.object-cover.rounded-xl
 
                 .space-y-4
                     each item in description
@@ -29,5 +29,5 @@ section(class="sm:py-16").py-8
                             ul.space-y-2
                                 each line in item.list
                                     li.flex.gap-2.items-start.ml-2
-                                        img(src='/assets/img/icon.png' width=16).mt-1
+                                        img(src='/assets/img/icon.png' alt="List icon" width=16).mt-1
                                         span= line

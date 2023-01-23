@@ -38,7 +38,7 @@ section(class="sm:py-16").py-8
             each project in projects
                 .flex.flex-col.gap-4.justify-between
                     a(href=project.url).h-72.w-full
-                        img(src=project.image).rounded-bl-3xl.rounded-tr-3xl.w-full.h-full.object-cover
+                        img(src=project.image alt="Charity project").rounded-bl-3xl.rounded-tr-3xl.w-full.h-full.object-cover
 
                     a(href=project.url).space-y-2.flex-grow
                         p.font-bold.text-xl.w-full= project.title
