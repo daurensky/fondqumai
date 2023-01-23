@@ -85,19 +85,19 @@ html
         nav.sticky.top-0.bg-white.shadow.z-10
             .max-w-screen-xl.w-full.mx-auto.px-4.py-2.flex.justify-between.items-center
                 //- Mobile
-                button(class="sm:hidden" data-focusable).flex.items-center.gap-2.bg-white.rounded-xl.px-4.py-2.group
-                    i.fa-solid.fa-bars.text-primary-gray
-                    span.font-bold.text-primary-gray Меню
+                button(class="sm:hidden" data-focusable).flex.items-center.gap-2.bg-white.rounded-xl.px-4.py-2.group.text-primary-gray
+                    i.fa-solid.fa-bars
+                    span.font-bold Меню
                         
                     div(data-focusable-item).invisible.absolute.top-full.left-0.right-0
                         .bg-white.shadow.py-2
                             each page in t[lang].pages
                                 a(href=page.link class=`${page.link === url ? 'text-primary-tiffany' : 'text-primary-gray'}`).px-6.py-2.w-full.block.text-left.font-bold= page.title
 
-                button(class="sm:hidden" data-focusable).px-4.py-2.rounded-xl.bg-white.relative.group
+                button(class="sm:hidden" data-focusable).px-4.py-2.rounded-xl.bg-white.relative.group.text-primary-gray
                     .flex.gap-2.items-center
-                        span.uppercase.font-bold.text-primary-gray= lang
-                        i.fa-solid.fa-chevron-down.text-xs.text-primary-gray
+                        span.uppercase.font-bold= lang
+                        i.fa-solid.fa-chevron-down.text-xs
 
                     div(data-focusable-item).invisible.absolute.top-full.bg-white.left-0.right-0.px-4.py-2.rounded-xl.shadow.z-10
                         each alternate in alternates
