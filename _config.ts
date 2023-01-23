@@ -19,7 +19,7 @@ site.use(
               tiffany: '#09b8b6',
               white: '#e9eee0',
               gray: '#8b8778',
-              blue: '#007f9d'
+              black: '#2a2a2a'
             },
           },
           fontFamily: {

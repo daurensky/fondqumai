@@ -5,13 +5,13 @@ ru:
 
     projects:
       - title: Новый год
-        subText: 'Новый Год - главный праздник для всех детей!'
+        subText: 'Новый Год - главный праздник для всех детей! В детских хосписах многих европейских стран и США практикуют празднование Рождества и Нового...'
         image: '/assets/img/projects/new-year/1.jpeg'
         url: new-year
 
       - title: Оказание содействия людям с инвалидностью в трудоустройстве
         subText: 'Общественное объединение инвалидов “Qamqor Plus” оказывает содействие людям с инвалидностью в трудоустройстве'
-        image: '/assets/img/projects/new-year/1.jpeg'
+        image: '/assets/img/projects/work-for-disabled-persons/1.jpeg'
         url: work-for-disabled-persons
 
 kz:
@@ -20,19 +20,19 @@ kz:
 
     projects:
       - title: Новый год
-        subText: 'Новый Год - главный праздник для всех детей!'
+        subText: 'Новый Год - главный праздник для всех детей! В детских хосписах многих европейских стран и США практикуют празднование Рождества и Нового...'
         image: '/assets/img/projects/new-year/1.jpeg'
         url: new-year
 
       - title: Оказание содействия людям с инвалидностью в трудоустройстве
         subText: 'Общественное объединение инвалидов “Qamqor Plus” оказывает содействие людям с инвалидностью в трудоустройстве'
-        image: '/assets/img/projects/new-year/1.jpeg'
+        image: '/assets/img/projects/work-for-disabled-persons/1.jpeg'
         url: work-for-disabled-persons
 ---
 
 section(class="sm:py-16").py-8
     .max-w-screen-xl.w-full.mx-auto.px-4
-        h2.text-2xl.font-bold.mb-8.text-center.text-primary-tiffany.font-rubik= ourProjects
+        h2.text-2xl.font-medium.mb-8.text-center.font-rubik= ourProjects
 
         div(class="sm:grid-cols-3").grid.gap-8
             each project in projects
@@ -40,8 +40,8 @@ section(class="sm:py-16").py-8
                     a(href=project.url).h-72.w-full
                         img(src=project.image).rounded-bl-3xl.rounded-tr-3xl.w-full.h-full.object-cover
 
-                    a(href=project.url).space-y-2.h-full
-                        p.font-rubik.font-medium.text-xl.text-primary-tiffany.w-full.text-center= project.title
-                        p.text-gray-500.w-full.text-center= project.subText
+                    a(href=project.url).space-y-2.flex-grow
+                        p.font-bold.text-xl.w-full= project.title
+                        p.text-gray-500.w-full= project.subText
 
-                    a(href=project.url).bg-primary-white.text-primary-gray.p-4.rounded-xl.block.text-center.font-rubik.font-medium= more
+                    a(href=project.url).bg-primary-tiffany.text-white.p-4.rounded-xl.block.text-center.font-bold= more
