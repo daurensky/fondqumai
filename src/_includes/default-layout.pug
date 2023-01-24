@@ -116,29 +116,31 @@ html
 
         main.flex-grow!=content
 
-        footer.py-8.bg-primary-black
+        footer.py-8.border-t.border-gray-300
             .max-w-screen-xl.w-full.mx-auto.px-4.py-2.flex.flex-col.gap-8
-                .space-y-4
-                    a(href="/#{lang}").flex.items-center.gap-2
-                        img(src="/assets/img/logo-white.svg" alt="Logo" width=150)
+                div(class="sm:flex-row").flex.flex-col.gap-8
+                    .space-y-4.w-full
+                        a(href="/#{lang}").flex.items-center.gap-2
+                            img(src="/assets/img/logo.svg" alt="Logo" width=150)
 
-                    p.text-primary-white= t[lang].withLove
+                    .space-y-4.w-full
+                        p.text-primary-black.font-rubik= t[lang].withLove
 
-                .space-y-2
-                    p.text-primary-white.text-sm
-                        span Тел: 
-                        a(href="tel:+7 (701) 100 06 76").underline +7 (701) 100 06 76
+                        .space-y-2
+                            p.text-primary-gray.text-sm
+                                span Тел: 
+                                a(href="tel:+7 (701) 100 06 76").underline +7 (701) 100 06 76
 
-                    p.text-primary-white.text-sm 
-                        span Email: 
-                        a(href="mailto:info@qumaifond.kz").underline info@qumaifond.kz
+                            p.text-primary-gray.text-sm 
+                                span Email: 
+                                a(href="mailto:info@qumaifond.kz").underline info@qumaifond.kz
 
-                .flex.gap-4.w-full.justify-center
-                    a(href="https://www.instagram.com/qumai_fond/" target="_blank").flex.items-center.justify-center.w-12.h-12.border-2.border-primary-white.rounded-full
-                        i.fa-brands.fa-instagram.text-2xl.text-primary-white
-                        
-                    a(href="https://www.facebook.com/groups/qumai_fond/" target="_blank").flex.items-center.justify-center.w-12.h-12.border-2.border-primary-white.rounded-full
-                        i.fa-brands.fa-facebook.text-2xl.text-primary-white
+                        .flex.gap-4
+                            a(href="https://www.instagram.com/qumai_fond/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-full
+                                i.fa-brands.fa-instagram.text-2xl.text-primary-gray
+                                
+                            a(href="https://www.facebook.com/groups/qumai_fond/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-full
+                                i.fa-brands.fa-facebook.text-2xl.text-primary-gray
 
         //- Modals
 
