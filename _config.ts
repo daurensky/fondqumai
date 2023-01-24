@@ -20,6 +20,7 @@ site.use(
               white: '#e9eee0',
               gray: '#8b8778',
               black: '#2a2a2a',
+              beige: '#f1deb4'
             },
           },
           fontFamily: {
