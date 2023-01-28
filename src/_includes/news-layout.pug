@@ -7,7 +7,7 @@ section(class="sm:py-16").py-8
         h2.text-3xl.font-medium.mb-8.font-rubik= title
 
         .space-y-8
-            time.block.text-xs.text-primary-gray.text-ellipsis.overflow-hidden.whitespace-nowrap= `${date.toLocaleDateString('ru-RU')} ${date.toLocaleDateString('ru-RU')}`
+            time.block.text-xs.text-primary-gray.text-ellipsis.overflow-hidden.whitespace-nowrap= `${date.toLocaleDateString('ru-RU')} ${date.toLocaleTimeString('ru-RU')}`
 
             img(src=preview_image, alt="Preview").rounded-bl-3xl.rounded-tr-3xl
 
