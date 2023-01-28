@@ -45,7 +45,8 @@ html
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:wght@400;500;700&display=swap")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css")
-        link(rel="stylesheet" href="/assets/css/style.css")
+        link(rel="stylesheet" href="/assets/css/style.css" inline)
+        link(rel="stylesheet" href="/assets/css/markdown.css" inline)
         
         title= t[lang].title
         meta(name="description", content=t[lang].description)
@@ -63,73 +64,75 @@ html
         header.bg-white.relative.z-20
             .max-w-screen-xl.w-full.mx-auto.p-4.flex.items-center.justify-between.gap-4
                 a(href=`/${lang}` class="sm:w-36").flex.items-center.gap-2.shrink-0.mr-2
-                    img(src="/assets/img/logo.svg" alt="Logo" width=150)
+                    img(src="/assets/img/logo.svg" alt="Logo" inline)
 
                 //- Desktop search
                 form(action="search" class="sm:flex").hidden.w-full.max-w-xl
-                    input(name="q" placeholder=t[lang].doSearch).bg-gray-100.flex-grow.px-4.py-2.rounded-tl-xl.rounded-bl-xl.border-y.border-l
-                    button.px-4.py-2.border.rounded-tr-xl.rounded-br-xl
-                        i.fa-solid.fa-search.text-primary-gray
+                    input(name="q" placeholder=t[lang].doSearch).bg-gray-50.flex-grow.px-4.py-2.rounded-tl-xl.rounded-bl-xl.border-y.border-l.border-gray-300
+                    button.px-4.py-2.border.border-gray-300.rounded-tr-xl.rounded-br-xl
+                        i.fa-solid.fa-search.text-primary-black
                         
                 .flex.gap-4
                     //- Mobile search
                     a(href="#search" class="sm:hidden").flex.items-center.gap-2.bg-white.rounded-xl.px-4.py-3
-                        i.fa-solid.fa-search.text-primary-gray
+                        i.fa-solid.fa-search.text-primary-black
 
                     //- Desktop lang switcher
-                    button(class="sm:block" data-focusable).hidden.px-4.py-2.rounded-xl.bg-white.relative.group.text-primary-gray
+                    button(class="sm:block" data-focusable).hidden.px-4.py-2.rounded-xl.bg-white.relative.group.text-primary-black
                         .flex.gap-2.items-center
-                            span.uppercase.font-bold= lang
+                            span.uppercase= lang
                             i.fa-solid.fa-chevron-down.text-xs
 
-                        div(data-focusable-item).invisible.absolute.top-full.bg-white.left-0.right-0.px-4.py-2.rounded-xl.z-20.shadow
+                        div(data-focusable-item="opacity-0 -translate-y-1").invisible.absolute.top-full.bg-white.left-0.right-0.px-4.py-2.rounded-xl.z-20.border.border-gray-300.transition-all.opacity-0.-translate-y-1
                             each alternate in alternates
                                 if alternate.data.lang !== lang
-                                    a(href= value=alternate.data.url).uppercase.block.text-primary-gray.text-left.font-bold= alternate.data.lang
+                                    a(href= value=alternate.data.url).uppercase.block.text-primary-black.text-left.font-medium= alternate.data.lang
                     
                     //- Desktop socials
                     div(class="sm:flex").hidden.gap-2.w-full.justify-center
                         a(href="https://www.instagram.com/qumai_fond/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-xl.bg-white
-                            i.fa-brands.fa-instagram.text-2xl.text-primary-gray
+                            i.fa-brands.fa-instagram.text-2xl.text-primary-black
                             
                         a(href="https://www.facebook.com/groups/qumai_fond/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-xl.bg-white
-                            i.fa-brands.fa-facebook.text-2xl.text-primary-gray
+                            i.fa-brands.fa-facebook.text-2xl.text-primary-black
 
         nav.sticky.top-0.bg-white.shadow.z-10
             .max-w-screen-xl.w-full.mx-auto.px-4.py-2.flex.justify-between.items-center
-                //- Mobile
-                button(class="sm:hidden" data-focusable).flex.items-center.gap-2.bg-white.rounded-xl.px-4.py-2.group.text-primary-gray
+                //- Mobile links
+                button(class="sm:hidden" data-focusable).flex.items-center.gap-2.bg-white.rounded-xl.p-2.group.text-primary-black
                     i.fa-solid.fa-bars
-                    span.font-bold Меню
-                        
-                    div(data-focusable-item).invisible.absolute.top-full.left-0.right-0
+                    span Меню
+                    
+                    div(data-focusable-item="opacity-0 -translate-y-1").invisible.absolute.top-full.left-0.right-0.border-t.border-gray-300.transition-all.opacity-0.-translate-y-1
                         .bg-white.shadow.py-2
                             each page in t[lang].pages
-                                a(href=page.link class=`${page.link === url ? 'text-primary-tiffany' : 'text-primary-gray'}`).px-6.py-2.w-full.block.text-left.font-bold= page.title
+                                a(href=page.link class=`${page.link === url ? 'text-primary-tiffany' : 'text-primary-black'}`).px-6.py-2.w-full.block.text-left= page.title
 
-                button(class="sm:hidden" data-focusable).px-4.py-2.rounded-xl.bg-white.relative.group.text-primary-gray
+
+                //- Mobile lang switcher
+                button(class="sm:hidden" data-focusable).p-2.rounded-xl.bg-white.relative.group.text-primary-black
                     .flex.gap-2.items-center
-                        span.uppercase.font-bold= lang
+                        span.uppercase= lang
                         i.fa-solid.fa-chevron-down.text-xs
 
-                    div(data-focusable-item).invisible.absolute.top-full.bg-white.left-0.right-0.px-4.py-2.rounded-xl.shadow.z-10
+                    div(data-focusable-item="opacity-0 -translate-y-1").invisible.absolute.top-full.bg-white.left-0.right-0.px-4.py-2.rounded-xl.border.border-gray-300.z-10.transition-all.opacity-0.-translate-y-1
                         each alternate in alternates
                             if alternate.data.lang !== lang
-                                a(href= value=alternate.data.url).uppercase.block.text-primary-gray.text-left.font-bold= alternate.data.lang
+                                a(href= value=alternate.data.url).uppercase.block.text-primary-black.text-left= alternate.data.lang
                                 
-                //- Desktop
+                //- Desktop links
                 div(class="sm:flex").hidden.py-2.w-full
                     each page in t[lang].pages
-                        a(href=page.link class=`${page.link === url ? 'text-primary-tiffany' : 'text-primary-gray'}`).w-full.block.text-center.font-bold= page.title
+                        a(href=page.link class=`${page.link === url ? 'text-primary-tiffany' : 'text-primary-black'}`).w-full.block.text-center= page.title
 
-        main.flex-grow!=content
+        main.flex-grow.bg-gray-50!=content
 
-        footer.py-8.border-t.border-gray-300
+        footer.py-8.border-t.border-gray-300.bg-gray-50
             .max-w-screen-xl.w-full.mx-auto.px-4.py-2.flex.flex-col.gap-8
                 div(class="sm:flex-row").flex.flex-col.gap-8
                     .space-y-4.w-full
                         a(href=`/${lang}`).inline-block
-                            img(src="/assets/img/logo.svg" alt="Logo" width=150)
+                            img(src="/assets/img/logo.svg" alt="Logo" inline)
 
                     .space-y-4.w-full
                         p.text-primary-black.font-rubik= t[lang].withLove
@@ -151,11 +154,14 @@ html
                                 i.fa-brands.fa-facebook.text-2xl.text-primary-gray
 
         //- Modals
-        div(id="search" class="invisible target:visible fixed top-0 left-0 right-0 bottom-0 sm:hidden z-30")
+        div(id="search" class="invisible target:visible opacity-0 target:opacity-100 transition-all fixed top-0 left-0 right-0 bottom-0 sm:hidden z-30 group")
             form(action="search")
                 input(name="q" placeholder=t[lang].doSearch).bg-white.w-full.p-4
 
             a(href="#" class="absolute top-0 left-0 right-0 bottom-0 bg-black/75 -z-10")
 
         //- Elements with dropdown
-        script(src="/assets/js/focusable.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js")
+        script(src=`https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/locale/${lang}.min.js`)
+        script(src="/assets/js/relative-time.js")
+        script(src="/assets/js/focusable.js" inline)

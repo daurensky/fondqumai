@@ -1,0 +1,52 @@
+backend:
+  name: git-gateway
+  branch: gh-pages
+
+media_folder: src/assets/uploads
+
+public_folder: /assets/uploads
+
+collections:
+  - label: Новости (Рус.)
+    name: news-ru
+    description: Список новостей на русском языке
+    folder: src/news
+    extension: md
+    create: true
+    slug: '{{slug}}-{{second}}{{minute}}{{second}}_ru'
+    preview_path: /ru/news
+    fields:
+      - label: Preview
+        name: preview_image
+        widget: image
+      - label: Заголовок
+        name: title
+        widget: string
+      - label: Контент
+        name: body
+        widget: markdown
+      - name: lang
+        widget: hidden
+        default: ru
+
+  - label: Новости (Каз.)
+    name: news-kk
+    description: Список новостей на казахском языке
+    folder: src/news
+    extension: md
+    create: true
+    slug: '{{slug}}-{{second}}{{minute}}{{second}}_kk'
+    preview_path: /kk/news
+    fields:
+      - label: Preview
+        name: preview_image
+        widget: image
+      - label: Заголовок
+        name: title
+        widget: string
+      - label: Контент
+        name: body
+        widget: markdown
+      - name: lang
+        widget: hidden
+        default: kk

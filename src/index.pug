@@ -4,7 +4,7 @@ ru:
     ourGoalSub: Сократить младенческую и детскую смертность и инвалидность в казахстане
     care: Сила заботы Fondqumai в цифрах
     goToReports: Перейти к отчетности
-    news: Новости
+    newsTitle: Новости
     goToNews: Больше новостей
     ourManifest: Наш манифест
 
@@ -20,28 +20,28 @@ kk:
 
 section(class="sm:py-16 h-[300px] sm:h-[400px] md:h-[600px] lg:h-[80vh]" style="background-image: url(/assets/img/banner-1.jpg)").py-8.bg-cover.bg-center
 
+- const news = search.pages(`news lang=${lang}`, 'date=desc', 4)
+
 section(class="sm:py-16").py-8
     .max-w-screen-xl.w-full.mx-auto.px-4
         .flex.flex-col.items-center
-            h2.text-2xl.font-medium.mb-8.text-center.font-rubik= news
+            h2.text-2xl.font-medium.mb-8.text-center.font-rubik= newsTitle
 
-            div(class="sm:grid-cols-3").mb-8.grid.gap-4
-                article.p-4.bg-white.rounded-xl.w-full.leading-5.space-y-2.border.border-gray-300
-                    p.text-xs.text-gray-500 22.11.2022
-                    p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
-                    p.text-sm.text-gray-500 Через Отделение патологии новорожденных Атырауского городского роддома ежегодно проходит более 270 детей. Для помощи врачам в выхаживании новорожденных при сложных...
+            div(class="sm:grid-cols-2 sm:gap-4").grid.mb-8
+                each article, i in news
+                    a(href=article.data.url class="last:border-0 focus:bg-gray-100 rounded-2xl sm:flex sm:items-center sm:gap-4 sm:px-4").block.py-4.w-full.leading-5.space-y-2
+                        div(class="sm:w-1/2").w-full
+                            img(src=article.data.preview_image alt="Preview").rounded-xl.w-full
+                        
+                        .space-y-2.w-full
+                            p.font-rubik.text-xl= article.data.title
+                            time(data-relative-time).block.text-xs.text-primary-gray.text-ellipsis.overflow-hidden.whitespace-nowrap= article.data.date
 
-                article.p-4.bg-white.rounded-xl.w-full.leading-5.space-y-2.border.border-gray-300
-                    p.text-xs.text-gray-500 22.11.2022
-                    p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
-                    p.text-sm.text-gray-500 Через Отделение патологии новорожденных Атырауского городского роддома ежегодно проходит более 270 детей. Для помощи врачам в выхаживании новорожденных при сложных...
+                    div(class="sm:hidden")
+                        if i !== news.length - 1
+                            hr.h-px.bg-gray-300.border-0
 
-                article.p-4.bg-white.rounded-xl.w-full.leading-5.space-y-2.border.border-gray-300
-                    p.text-xs.text-gray-500 22.11.2022
-                    p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
-                    p.text-sm.text-gray-500 Через Отделение патологии новорожденных Атырауского городского роддома ежегодно проходит более 270 детей. Для помощи врачам в выхаживании новорожденных при сложных...
-
-            a(href=`/${lang}/news`).bg-white.p-4.rounded-xl.text-primary-tiffany.font-bold.flex.items-center.gap-2
+            a(href=`/${lang}/news`).p-4.rounded-xl.text-primary-tiffany.font-bold.flex.items-center.gap-2
                 span= goToNews
                 i.fa-solid.fa-arrow-right.text-sm
 

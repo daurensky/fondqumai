@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .markdown {
+    display: flex;
+    flex-direction: column;
+    gap: theme('gap.8');
+  }
+
+  .markdown img {
+    border-radius: theme('borderRadius.xl');
+  }
+
+  .markdown h1 {
+    font-family: theme('fontFamily.rubik');
+    font-size: theme('fontSize.2xl');
+  }
+
+  .markdown h2 {
+    font-family: theme('fontFamily.rubik');
+    font-size: theme('fontSize.xl');
+  }
+
+  .markdown h3 {
+    font-family: theme('fontFamily.roboto');
+    font-size: theme('fontSize.lg');
+    font-weight: bold;
+  }
+
+  .markdown h4 {
+    font-family: theme('fontFamily.roboto');
+    font-weight: bold;
+  }
+
+  .markdown li {
+    display: flex;
+    align-items: center;
+    margin-left: theme('margin.2');
+    gap: theme('gap.2');
+  }
+
+  .markdown ul li::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url(/assets/img/icon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .markdown ol {
+    counter-reset: section;
+  }
+
+  .markdown ol li::before {
+    counter-increment: section;
+    content: counter(section) ') ';
+  }
+
+  .markdown blockquote {
+    display: flex;
+    flex-direction: column;
+    gap: theme('gap.4');
+    border-left: theme('borderWidth.4') theme('colors.primary.white') solid;
+    padding-left: theme('padding.4');
+  }
+}

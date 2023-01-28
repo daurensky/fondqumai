@@ -1,36 +1,27 @@
 ---
 ru:
-    news: Новости
+    newsTitle: Новости
     
 kk:
-    news: Новости
+    newsTitle: Новости
 ---
 
+- const news = search.pages(`news lang=${lang}`, 'date=desc')
+
 section(class="sm:py-16").py-8
-    .max-w-screen-xl.w-full.mx-auto.px-4
-        h2.text-2xl.font-medium.mb-8.text-center.font-rubik= news
-        
-        div(class="sm:grid-cols-3").mb-8.grid.gap-4
-            article.p-4.bg-white.rounded-xl.w-full.leading-5.space-y-2.border.border-gray-300
-                p.text-xs.text-gray-500 22.11.2022
-                p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
-                
-            article.p-4.bg-white.rounded-xl.w-full.leading-5.space-y-2.border.border-gray-300
-                p.text-xs.text-gray-500 22.11.2022
-                p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
-                
-            article.p-4.bg-white.rounded-xl.w-full.leading-5.space-y-2.border.border-gray-300
-                p.text-xs.text-gray-500 22.11.2022
-                p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
-                
-            article.p-4.bg-white.rounded-xl.w-full.leading-5.space-y-2.border.border-gray-300
-                p.text-xs.text-gray-500 22.11.2022
-                p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
-                
-            article.p-4.bg-white.rounded-xl.w-full.leading-5.space-y-2.border.border-gray-300
-                p.text-xs.text-gray-500 22.11.2022
-                p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
-                
-            article.p-4.bg-white.rounded-xl.w-full.leading-5.space-y-2.border.border-gray-300
-                p.text-xs.text-gray-500 22.11.2022
-                p.font-medium.font-rubik Оборудование для спасения новорожденных получил роддом атырау
+    .max-w-screen-md.w-full.mx-auto.px-4
+        h2.text-2xl.font-medium.mb-8.text-center.font-rubik= newsTitle
+
+        .space-y-4
+            //- Create pagination
+            each article, i in news
+                a(href=article.data.url class="last:border-0 focus:bg-gray-100 rounded-2xl sm:flex sm:gap-4").block.py-4.w-full.leading-5.space-y-2
+                    div(class="sm:w-1/2").w-full
+                        img(src=article.data.preview_image alt="Preview").rounded-xl.w-full
+                    
+                    .space-y-2.w-full
+                        p.font-rubik.text-xl= article.data.title
+                        time(data-relative-time).block.text-xs.text-primary-gray.text-ellipsis.overflow-hidden.whitespace-nowrap= article.data.date
+
+                if i !== news.length - 1
+                    hr.h-px.bg-gray-300.border-0

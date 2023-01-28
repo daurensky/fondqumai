@@ -3,32 +3,12 @@ ru:
     ourProjects: Наши проекты
     more: Подробнее
 
-    projects:
-      - title: Новый год
-        subText: 'Новый Год - главный праздник для всех детей! В детских хосписах многих европейских стран и США практикуют празднование Рождества и Нового...'
-        image: '/assets/img/projects/new-year/1.jpeg'
-        url: new-year
-
-      - title: Оказание содействия людям с инвалидностью в трудоустройстве
-        subText: 'Общественное объединение инвалидов “Qamqor Plus” оказывает содействие людям с инвалидностью в трудоустройстве'
-        image: '/assets/img/projects/work-for-disabled-persons/1.jpeg'
-        url: work-for-disabled-persons
-
 kk:
     ourProjects: Наши проекты
     more: Подробнее
-
-    projects:
-      - title: Новый год
-        subText: 'Новый Год - главный праздник для всех детей! В детских хосписах многих европейских стран и США практикуют празднование Рождества и Нового...'
-        image: '/assets/img/projects/new-year/1.jpeg'
-        url: new-year
-
-      - title: Оказание содействия людям с инвалидностью в трудоустройстве
-        subText: 'Общественное объединение инвалидов “Qamqor Plus” оказывает содействие людям с инвалидностью в трудоустройстве'
-        image: '/assets/img/projects/work-for-disabled-persons/1.jpeg'
-        url: work-for-disabled-persons
 ---
+
+- const projects = search.pages(`projects lang=${lang}`, 'date=desc')
 
 section(class="sm:py-16").py-8
     .max-w-screen-xl.w-full.mx-auto.px-4
@@ -37,11 +17,11 @@ section(class="sm:py-16").py-8
         div(class="sm:grid-cols-3").grid.gap-8
             each project in projects
                 .flex.flex-col.gap-4.justify-between
-                    a(href=project.url).h-72.w-full
-                        img(src=project.image alt="Charity project").rounded-bl-3xl.rounded-tr-3xl.w-full.h-full.object-cover
+                    a(href=project.data.url).h-72.w-full
+                        img(src=project.data.main_image alt="Charity project").rounded-bl-3xl.rounded-tr-3xl.w-full.h-full.object-cover
 
-                    a(href=project.url).space-y-2.flex-grow
-                        p.font-bold.text-xl.w-full= project.title
-                        p.text-gray-500.w-full= project.subText
+                    a(href=project.data.url).space-y-2.flex-grow
+                        p.font-bold.text-xl.w-full= project.data.title
+                        p.text-gray-500.w-full.text-ellipsis.overflow-hidden.whitespace-nowrap.w-full!= filters.md(project.data.content, true)
 
-                    a(href=project.url).bg-primary-tiffany.text-white.p-4.rounded-xl.block.text-center.font-bold= more
+                    a(href=project.data.url).bg-primary-tiffany.text-white.p-4.rounded-xl.block.text-center.font-bold= more
