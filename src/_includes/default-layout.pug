@@ -35,6 +35,8 @@ t:
           - link: "/kk/projects/"
             title: "Біздің жобалар"
         withLove: '«Фонд развития «Құмай» - с любовью к ближнему.'
+
+scripts: []
 ---
 
 doctype html
@@ -59,6 +61,9 @@ html
             | function gtag(){dataLayer.push(arguments);}
             | gtag('js', new Date());
             | gtag('config', 'G-XZR40GK7XX');
+            
+        each src in scripts
+            script(src=src)
 
     body.flex.flex-col.min-h-screen.font-roboto.text-primary-black
         header.bg-white.relative.z-20
