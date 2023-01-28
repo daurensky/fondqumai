@@ -53,7 +53,6 @@ site.use(inline())
 
 site.use(
   netlifyCMS({
-    // local: false,
     netlifyIdentity: true,
   })
 )

@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: gh-pages
+  branch: master
 
 media_folder: src/assets/uploads
 
