@@ -1,11 +1,13 @@
 backend:
   name: git-gateway
   branch: master
-
+site_url: https://www.qumaifond.kz
+display_url: https://www.qumaifond.kz
+logo_url: https://www.qumaifond.kz/assets/img/logo.svg
+locale: ru
+search: true
 media_folder: src/assets/uploads
-
 public_folder: /assets/uploads
-
 collections:
   - label: Новости (Рус.)
     name: news-ru
