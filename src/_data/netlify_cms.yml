@@ -15,7 +15,7 @@ collections:
     folder: src/news
     extension: md
     create: true
-    slug: '{{slug}}-{{second}}{{minute}}{{second}}_ru'
+    slug: '{{hour}}{{minute}}{{second}}_ru'
     preview_path: /ru/news
     fields:
       - label: Preview
@@ -37,7 +37,7 @@ collections:
     folder: src/news
     extension: md
     create: true
-    slug: '{{slug}}-{{second}}{{minute}}{{second}}_kk'
+    slug: '{{hour}}{{minute}}{{second}}_kk'
     preview_path: /kk/news
     fields:
       - label: Preview
