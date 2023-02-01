@@ -21,9 +21,9 @@ kk:
     ourManifest: Наш манифест
 ---
 
-section(class="sm:py-16 h-[300px] sm:h-[400px] md:h-[600px] lg:h-[80vh]" style="background-image: url(/assets/img/banner-1.jpg)").py-8.bg-cover.bg-center
+section(class="h-[300px] sm:h-[400px] lg:h-[500px]" style="background-image: url(/assets/img/banner-1.jpg)" data-parallax).bg-cover.bg-center
 
-- const news = search.pages(`news lang=${lang}`, 'date=desc', 4)
+- const news = search.pages(`news lang=${lang}`, 'created_at=desc', 4)
 
 section(class="sm:py-16").py-8
     .max-w-screen-xl.w-full.mx-auto.px-4
@@ -32,13 +32,13 @@ section(class="sm:py-16").py-8
 
             div(class="sm:grid-cols-2 sm:gap-4").grid.mb-8
                 each article, i in news
-                    a(href=article.data.url class="last:border-0 focus:bg-gray-100 rounded-2xl sm:flex sm:items-center sm:gap-4 sm:px-4").block.py-4.w-full.leading-5.space-y-2
-                        div(class="sm:w-1/2").w-full
-                            img(src=article.data.preview_image alt="Preview").rounded-xl.w-full
-                        
+                    a(href=article.data.url class="last:border-0 focus:bg-gray-100 rounded-2xl sm:flex sm:gap-4 sm:px-4").block.py-4.w-full.leading-5.space-y-2
+                        div(class="sm:w-1/2 max-h-48").w-full.h-full
+                            img(src=article.data.preview_image alt="Preview").rounded-xl.w-full.h-full.object-cover
+
                         .space-y-2.w-full
                             p.font-rubik.text-xl= article.data.title
-                            time(data-relative-time).block.text-xs.text-primary-gray.text-ellipsis.overflow-hidden.whitespace-nowrap= article.data.date
+                            time(data-relative-time).block.text-xs.text-primary-gray.text-ellipsis.overflow-hidden.whitespace-nowrap= article.data.created_at
 
                     div(class="sm:hidden")
                         if i !== news.length - 1

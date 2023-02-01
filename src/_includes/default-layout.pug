@@ -63,7 +63,7 @@ html
             | gtag('config', 'G-XZR40GK7XX');
             
         each src in scripts
-            script(src=src)
+            script(src=src defer)
 
     body.flex.flex-col.min-h-screen.font-roboto.text-primary-black
         header.bg-white.relative.z-20
@@ -96,10 +96,13 @@ html
                     //- Desktop socials
                     div(class="sm:flex").hidden.gap-2.w-full.justify-center
                         a(href="https://www.instagram.com/qumai_fond/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-xl.bg-white
-                            i.fa-brands.fa-instagram.text-2xl.text-primary-black
+                            i.fa-brands.fa-instagram.text-2xl.text-primary-gray
                             
                         a(href="https://www.facebook.com/groups/qumai_fond/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-xl.bg-white
-                            i.fa-brands.fa-facebook.text-2xl.text-primary-black
+                            i.fa-brands.fa-facebook.text-2xl.text-primary-gray
+                            
+                        a(href="https://wa.me/+77012999905/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-xl.bg-white
+                            i.fa-brands.fa-whatsapp.text-2xl.text-primary-gray
 
         nav.sticky.top-0.bg-white.shadow.z-10
             .max-w-screen-xl.w-full.mx-auto.px-4.py-2.flex.justify-between.items-center
@@ -145,7 +148,7 @@ html
                         .space-y-2
                             p.text-primary-gray.text-sm
                                 span Тел: 
-                                a(href="tel:+7 (701) 100 06 76").underline +7 (701) 100 06 76
+                                a(href="tel:+7 (701) 100 06 76").underline +7 (701) 299 99 05
 
                             p.text-primary-gray.text-sm 
                                 span Email: 
@@ -157,6 +160,9 @@ html
                                 
                             a(href="https://www.facebook.com/groups/qumai_fond/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-full
                                 i.fa-brands.fa-facebook.text-2xl.text-primary-gray
+                                
+                            a(href="https://wa.me/+77012999905/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-full
+                                i.fa-brands.fa-whatsapp.text-2xl.text-primary-gray
 
         //- Modals
         div(id="search" class="invisible target:visible opacity-0 target:opacity-100 transition-all fixed top-0 left-0 right-0 bottom-0 sm:hidden z-30 group")
@@ -168,5 +174,5 @@ html
         //- Elements with dropdown
         script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js")
         script(src=`https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/locale/${lang}.min.js`)
-        script(src="/assets/js/relative-time.js")
+        script(src="/assets/js/relative-time.js" inline)
         script(src="/assets/js/focusable.js" inline)

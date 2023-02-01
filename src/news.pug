@@ -6,7 +6,7 @@ kk:
     newsTitle: Новости
 ---
 
-- const news = search.pages(`news lang=${lang}`, 'date=desc')
+- const news = search.pages(`news lang=${lang}`, 'created_at=desc')
 
 section(class="sm:py-16").py-8
     .max-w-screen-md.w-full.mx-auto.px-4
@@ -16,12 +16,12 @@ section(class="sm:py-16").py-8
             //- Create pagination
             each article, i in news
                 a(href=article.data.url class="last:border-0 focus:bg-gray-100 rounded-2xl sm:flex sm:gap-4").block.py-4.w-full.leading-5.space-y-2
-                    div(class="sm:w-1/2").w-full
-                        img(src=article.data.preview_image alt="Preview").rounded-xl.w-full
+                    div(class="sm:w-1/2").w-full.h-full
+                        img(src=article.data.preview_image alt="Preview").rounded-xl.w-full.h-full.object-cover
                     
                     .space-y-2.w-full
                         p.font-rubik.text-xl= article.data.title
-                        time(data-relative-time).block.text-xs.text-primary-gray.text-ellipsis.overflow-hidden.whitespace-nowrap= article.data.date
+                        time(data-relative-time).block.text-xs.text-primary-gray.text-ellipsis.overflow-hidden.whitespace-nowrap= article.data.created_at
 
                 if i !== news.length - 1
                     hr.h-px.bg-gray-300.border-0

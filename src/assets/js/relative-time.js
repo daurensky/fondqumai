@@ -1,5 +1,5 @@
-const times = document.querySelectorAll('[data-relative-time]')
+const timeElements = document.querySelectorAll('[data-relative-time]')
 
-times.forEach(time => {
+timeElements.forEach(time => {
     time.innerHTML = moment(new Date(time.innerHTML)).fromNow()
 })
