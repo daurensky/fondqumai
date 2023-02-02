@@ -1,27 +1,106 @@
 ---
+styles:
+  - "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+
 scripts:
   - "https://identity.netlify.com/v1/netlify-identity-widget.js"
+  - "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+  - "/assets/js/carousel.js"
 
 ru:
-    ourGoal: Наша цель
-    ourGoalSub: Сократить младенческую и детскую смертность и инвалидность в казахстане
+    title: Фонд социального развития "Құмай"
+    goalsTitle: Наши цели
+    goals:
+      - title: Удовлетворение профессиональных и любительских интересов граждан
+        icon: lightbulb
+      - title: Реализация и защита социальных и культурных прав и свобод, развитие активности граждан
+        icon: shield
+      - title: Социально-экономическое развитие регионов Республики Казахстан
+        icon: thumbs-up
+      - title: Сотрудничество и взаимодействие с аналогичными общественными международными и казахстанскими организациями
+        icon: handshake
+      - title: Проведение культурно-просветительной, спортивно-оздоровительной работы
+        icon: seedling
     care: Сила заботы Fondqumai в цифрах
     goToReports: Перейти к отчетности
     newsTitle: Новости
     goToNews: Больше новостей
     ourManifest: Наш манифест
+    help: Помочь
+    requisites:
+      - key: Клиент
+        value: ЧФ "Фонд социального развития "Құмай"
+      - key: БИН
+        value: 221240014916
+      - key: Номер счета
+        value: KZ4196503F0011880104 KZT
+      - key: КБе
+        value: 18
+      - key: БИК
+        value: IRTYKZKA
+      - key: Наименование Банка
+        value: Филиал АО "ForteBank" в г. Астана
 
 kk:
-    ourGoal: Біздің мақсат
-    ourGoalSub: Қазақстандағы сәбилер мен балалар өлімі мен мүгедектігін қысқарту
+    title: Фонд социального развития "Құмай"
+    goalsTitle: Біздің мақсаттар
+    goals:
+      - title: Удовлетворение профессиональных и любительских интересов граждан
+        icon: lightbulb
+      - title: Реализация и защита социальных и культурных прав и свобод, развитие активности граждан
+        icon: shield
+      - title: Социально-экономическое развитие регионов Республики Казахстан
+        icon: thumbs-up
+      - title: Сотрудничество и взаимодействие с аналогичными общественными международными и казахстанскими организациями
+        icon: handshake
+      - title: Проведение культурно-просветительной, спортивно-оздоровительной работы
+        icon: seedling
     care: Fondqumai қамқорлығының күші цифрлармен
     goToReports: Есептілікке өту
     news: Жаңалықтар
     goToNews: Ауқымды жаңалық
     ourManifest: Наш манифест
+    help: Помочь
+    requisites:
+      - key: Клиент
+        value: ЧФ "Фонд социального развития "Құмай"
+      - key: БИН
+        value: 221240014916
+      - key: Номер счета
+        value: KZ4196503F0011880104 KZT
+      - key: КБе
+        value: 18
+      - key: БИК
+        value: IRTYKZKA
+      - key: Наименование Банка
+        value: Филиал АО "ForteBank" в г. Астана
 ---
 
-section(class="h-[300px] sm:h-[400px] lg:h-[500px]" style="background-image: url(/assets/img/banner-1.jpg)" data-parallax).bg-cover.bg-center
+//- section(class="h-[300px] sm:h-[400px] lg:h-[500px]" style="background-image: url(/assets/img/banner-1.jpg)").bg-cover.bg-center
+
+section(class="sm:py-16").py-8.space-y-8
+    .max-w-screen-xl.w-full.mx-auto.px-4
+        div(class="sm:flex-row sm:gap-8").flex.flex-col.gap-4
+            div(class="sm:w-1/2").w-full
+                img(src="/assets/img/banner-1.jpg" alt="").rounded-tr-3xl.rounded-bl-3xl
+
+            div(class="sm:w-1/2 sm:space-y-8 sm:items-start").flex.flex-col.items-center.w-full.space-y-2.py-2
+                h1(class="sm:text-left sm:mb-0").text-3xl.font-medium.text-center.font-rubik.mb-8= title
+                
+                div(aria-labelledby="carousel-heading").splide.w-full
+                    h2(class="sm:text-left")#carousel-heading.text-center= `${goalsTitle}:`
+
+                    .splide__track
+                        .splide__list
+                            each goal in goals
+                                .splide__slide
+                                    .flex.items-center.gap-4.p-4.rounded-xl
+                                        i(class=`fa-solid fa-${goal.icon} text-xl w-5 text-primary-tiffany text-center`)
+                                        span.break-word= goal.title
+
+                a(href="#help").bg-primary-tiffany.text-white.px-8.py-4.rounded-full.inline-flex.items-center.gap-2.text-center.font-bold
+                    i.fa-solid.fa-hand-holding-heart
+                    span= help
 
 - const news = search.pages(`news lang=${lang}`, 'created_at=desc', 4)
 
@@ -48,3 +127,21 @@ section(class="sm:py-16").py-8
                 span= goToNews
                 i.fa-solid.fa-arrow-right.text-sm
 
+
+div(id="help" class="invisible target:visible opacity-0 target:opacity-100 transition-all fixed top-0 left-0 right-0 bottom-0 z-30 group").flex.justify-center.items-center.p-4
+    .bg-white.m-auto.max-w-screen-md.w-full.p-4.rounded-xl
+        h2.text-lg.font-medium.mb-4.text-left.font-rubik= help
+
+        table.w-full
+            thead
+                tr
+                    th
+                    th
+            tbody
+                each requisite in requisites
+                    tr(class="last:border-0").border-b.border-gray-300
+                        td.p-2.text-primary-gray= requisite.key
+                        td.p-2= requisite.value
+
+
+    a(href="#" class="absolute top-0 left-0 right-0 bottom-0 bg-black/75 -z-10")
