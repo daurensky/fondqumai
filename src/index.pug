@@ -27,7 +27,8 @@ ru:
     goToNews: Больше новостей
     ourManifest: Наш манифест
     help: Помочь
-    requisites:
+    for_entity: Для юридических лиц
+    entity_requisites:
       - key: Клиент
         value: ЧФ "Фонд социального развития "Құмай"
       - key: БИН
@@ -40,6 +41,10 @@ ru:
         value: IRTYKZKA
       - key: Наименование Банка
         value: Филиал АО "ForteBank" в г. Астана
+    for_individual: Для физических лиц
+    individual_requisites:
+      - key: Номер карты
+        value: 4042 4583 1352 1009
 
 kk:
     title: Фонд социального развития "Құмай"
@@ -61,7 +66,8 @@ kk:
     goToNews: Ауқымды жаңалық
     ourManifest: Наш манифест
     help: Помочь
-    requisites:
+    for_entity: Для юридических лиц
+    entity_requisites:
       - key: Клиент
         value: ЧФ "Фонд социального развития "Құмай"
       - key: БИН
@@ -74,6 +80,10 @@ kk:
         value: IRTYKZKA
       - key: Наименование Банка
         value: Филиал АО "ForteBank" в г. Астана
+    for_individual: Для физических лиц
+    individual_requisites:
+      - key: Номер карты
+        value: 4042 4583 1352 1009
 ---
 
 //- section(class="h-[300px] sm:h-[400px] lg:h-[500px]" style="background-image: url(/assets/img/banner-1.jpg)").bg-cover.bg-center
@@ -98,7 +108,7 @@ section(class="sm:py-16").py-8.space-y-8
                                         i(class=`fa-solid fa-${goal.icon} text-xl w-5 text-primary-tiffany text-center`)
                                         span.break-word= goal.title
 
-                a(href="#help").bg-primary-tiffany.text-white.px-8.py-4.rounded-full.inline-flex.items-center.gap-2.text-center.font-bold
+                a(href="#help").bg-primary-tiffany.text-white.px-8.py-4.rounded-full.inline-flex.items-center.gap-2.text-center
                     i.fa-solid.fa-hand-holding-heart
                     span= help
 
@@ -123,14 +133,14 @@ section(class="sm:py-16").py-8
                         if i !== news.length - 1
                             hr.h-px.bg-gray-300.border-0
 
-            a(href=`/${lang}/news`).p-4.rounded-xl.text-primary-tiffany.font-bold.flex.items-center.gap-2
+            a(href=`/${lang}/news`).p-4.rounded-xl.text-primary-tiffany.flex.items-center.gap-2
                 span= goToNews
                 i.fa-solid.fa-arrow-right.text-sm
 
 
 div(id="help" class="invisible target:visible opacity-0 target:opacity-100 transition-all fixed top-0 left-0 right-0 bottom-0 z-30 group").flex.justify-center.items-center.p-4
-    .bg-white.m-auto.max-w-screen-md.w-full.p-4.rounded-xl
-        h2.text-lg.font-medium.mb-4.text-left.font-rubik= help
+    .bg-white.m-auto.max-w-screen-md.w-full.p-4.rounded-xl.space-y-4
+        h2.text-lg.font-medium.mb-4.text-left.font-rubik= for_entity
 
         table.w-full
             thead
@@ -138,10 +148,24 @@ div(id="help" class="invisible target:visible opacity-0 target:opacity-100 trans
                     th
                     th
             tbody
-                each requisite in requisites
+                each requisite in entity_requisites
                     tr(class="last:border-0").border-b.border-gray-300
                         td.p-2.text-primary-gray= requisite.key
                         td.p-2= requisite.value
+                        
+        h2.text-lg.font-medium.mb-4.text-left.font-rubik= for_individual
+
+        table.w-full
+            thead
+                tr
+                    th
+                    th
+            tbody
+                each requisite in individual_requisites
+                    tr(class="last:border-0").border-b.border-gray-300
+                        td.p-2.text-primary-gray= requisite.key
+                        td.p-2= requisite.value
+
 
 
     a(href="#" class="absolute top-0 left-0 right-0 bottom-0 bg-black/75 -z-10")
