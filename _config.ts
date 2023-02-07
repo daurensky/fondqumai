@@ -6,6 +6,7 @@ import netlifyCMS from 'lume/plugins/netlify_cms.ts'
 import postcss from 'lume/plugins/postcss.ts'
 import pug from 'lume/plugins/pug.ts'
 import tailwindcss from 'lume/plugins/tailwindcss.ts'
+import pagefind from 'lume/plugins/pagefind.ts'
 
 const site = lume(
   {
@@ -56,6 +57,8 @@ site.use(
     netlifyIdentity: true,
   })
 )
+
+site.use(pagefind())
 
 site.copy('assets/img')
 site.copy('assets/js')

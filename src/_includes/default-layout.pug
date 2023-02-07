@@ -38,6 +38,16 @@ t:
 
 scripts: []
 styles: []
+
+contacts:
+  - icon: instagram
+    link: https://www.instagram.com/qumai_fond
+  - icon: facebook
+    link: https://www.facebook.com/groups/qumaifond
+  - icon: whatsapp
+    link: https://wa.me/+77012999905
+  - icon: tiktok
+    link: https://www.tiktok.com/@qumai_fond
 ---
 
 doctype html
@@ -75,11 +85,13 @@ html
                 a(href=`/${lang}` class="sm:w-36").flex.items-center.gap-2.shrink-0.mr-2
                     img(src="/assets/img/logo.svg" alt="Logo" inline)
 
+                #search
+
                 //- Desktop search
-                form(action="search" class="sm:flex").hidden.w-full.max-w-xl
-                    input(name="q" placeholder=t[lang].doSearch).bg-gray-50.flex-grow.px-4.py-2.rounded-tl-full.rounded-bl-full.border-y.border-l.border-gray-300
-                    button.px-4.py-2.border.border-gray-300.rounded-tr-full.rounded-br-full
-                        i.fa-solid.fa-search.text-primary-black
+                    form(action=`/${lang}/search` class="sm:flex").hidden.w-full.max-w-xl
+                        input(name="q" placeholder=t[lang].doSearch).bg-gray-50.flex-grow.px-4.py-2.rounded-tl-full.rounded-bl-full.border-y.border-l.border-gray-300
+                        button.px-4.py-2.border.border-gray-300.rounded-tr-full.rounded-br-full
+                            i.fa-solid.fa-search.text-primary-black
                         
                 .flex.gap-4
                     //- Mobile search
@@ -99,14 +111,9 @@ html
                     
                     //- Desktop socials
                     div(class="sm:flex").hidden.gap-2.w-full.justify-center
-                        a(href="https://www.instagram.com/qumai_fond/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-xl.bg-white
-                            i.fa-brands.fa-instagram.text-2xl.text-primary-gray
-                            
-                        a(href="https://www.facebook.com/groups/qumaifond/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-xl.bg-white
-                            i.fa-brands.fa-facebook.text-2xl.text-primary-gray
-                            
-                        a(href="https://wa.me/+77012999905/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-xl.bg-white
-                            i.fa-brands.fa-whatsapp.text-2xl.text-primary-gray
+                        each contact in contacts
+                            a(href=contact.link target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-xl.bg-white
+                                i(class=`fa-brands fa-${contact.icon}`).text-2xl.text-primary-gray
 
         nav.sticky.top-0.bg-white.border-b.z-10
             .max-w-screen-xl.w-full.mx-auto.px-4.py-2.flex.justify-between.items-center
@@ -159,14 +166,9 @@ html
                                 a(href="mailto:info@qumaifond.kz").underline info@qumaifond.kz
 
                         .flex.gap-4
-                            a(href="https://www.instagram.com/qumai_fond/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-full
-                                i.fa-brands.fa-instagram.text-2xl.text-primary-gray
-                                
-                            a(href="https://www.facebook.com/groups/qumaifond/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-full
-                                i.fa-brands.fa-facebook.text-2xl.text-primary-gray
-                                
-                            a(href="https://wa.me/+77012999905/" target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-full
-                                i.fa-brands.fa-whatsapp.text-2xl.text-primary-gray
+                            each contact in contacts
+                                a(href=contact.link target="_blank").flex.items-center.justify-center.w-12.h-12.rounded-full
+                                    i(class=`fa-brands fa-${contact.icon}`).text-2xl.text-primary-gray
 
         //- Modals
         div(id="search" class="invisible target:visible opacity-0 target:opacity-100 transition-all fixed top-0 left-0 right-0 bottom-0 sm:hidden z-30 group")
