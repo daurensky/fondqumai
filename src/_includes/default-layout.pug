@@ -61,7 +61,11 @@ html
         link(rel="stylesheet" href="/assets/css/style.css" inline)
         link(rel="stylesheet" href="/assets/css/markdown.css" inline)
         
-        title= t[lang].title
+        if noTitleInHead
+            title= t[lang].title
+        else
+            title= `${title} • ${t[lang].title}`
+
         meta(name="description", content=t[lang].description)
         link(rel="icon" href="/assets/img/icon.png" type="image/png")
         
@@ -85,13 +89,11 @@ html
                 a(href=`/${lang}` class="sm:w-36").flex.items-center.gap-2.shrink-0.mr-2
                     img(src="/assets/img/logo.svg" alt="Logo" inline)
 
-                #search
-
                 //- Desktop search
-                    form(action=`/${lang}/search` class="sm:flex").hidden.w-full.max-w-xl
-                        input(name="q" placeholder=t[lang].doSearch).bg-gray-50.flex-grow.px-4.py-2.rounded-tl-full.rounded-bl-full.border-y.border-l.border-gray-300
-                        button.px-4.py-2.border.border-gray-300.rounded-tr-full.rounded-br-full
-                            i.fa-solid.fa-search.text-primary-black
+                form(action=`/${lang}/search/` class="sm:flex").hidden.w-full.max-w-xl
+                    input(name="q" placeholder=t[lang].doSearch).bg-gray-50.flex-grow.px-4.py-2.rounded-tl-full.rounded-bl-full.border-y.border-l.border-gray-300
+                    button.px-4.py-2.border.border-gray-300.rounded-tr-full.rounded-br-full
+                        i.fa-solid.fa-search.text-primary-black
                         
                 .flex.gap-4
                     //- Mobile search

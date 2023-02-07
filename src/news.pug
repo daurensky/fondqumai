@@ -1,16 +1,16 @@
 ---
 ru:
-    newsTitle: Новости
+    title: Новости
     
 kk:
-    newsTitle: Новости
+    title: Новости
 ---
 
 - const news = search.pages(`news lang=${lang}`, 'created_at=desc')
 
 section(class="sm:py-16").py-8
     .max-w-screen-md.w-full.mx-auto.px-4
-        h2.text-2xl.font-medium.mb-8.text-center.font-rubik= newsTitle
+        h2.text-2xl.font-medium.mb-8.text-center.font-rubik= title
 
         .space-y-4
             //- Create pagination

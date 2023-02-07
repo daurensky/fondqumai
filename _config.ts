@@ -7,6 +7,7 @@ import postcss from 'lume/plugins/postcss.ts'
 import pug from 'lume/plugins/pug.ts'
 import tailwindcss from 'lume/plugins/tailwindcss.ts'
 import pagefind from 'lume/plugins/pagefind.ts'
+import initSearch from './utils/initSearch.ts'
 
 const site = lume(
   {
@@ -58,7 +59,17 @@ site.use(
   })
 )
 
-site.use(pagefind())
+site.use(
+  pagefind({
+    indexing: {
+      glob: '**/news/**/*.html',
+      rootSelector: '#content',
+    },
+    ui: false,
+  })
+)
+
+site.process(['.html'], page => initSearch(page, site))
 
 site.copy('assets/img')
 site.copy('assets/js')

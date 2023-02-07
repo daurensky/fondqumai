@@ -3,8 +3,8 @@ layout: default-layout.pug
 ---
 
 section(class="sm:py-16").py-8
-    .max-w-screen-md.w-full.mx-auto.px-4
-        h2.text-3xl.font-medium.mb-8.font-rubik= title
+    #content.max-w-screen-md.w-full.mx-auto.px-4
+        h1.text-3xl.font-medium.mb-8.font-rubik= title
 
         .space-y-8
             time.block.text-xs.text-primary-gray.text-ellipsis.overflow-hidden.whitespace-nowrap= `${created_at.toLocaleDateString('ru-RU')} ${created_at.toLocaleTimeString('ru-RU', {hour: '2-digit', minute:'2-digit'})}`
