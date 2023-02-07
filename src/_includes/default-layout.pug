@@ -1,8 +1,8 @@
 ---
 t:
     ru:
-        title: Фонд социального развития "Құмай"
-        description: Фонд социального развития "Құмай" реализует благотворительные проекты в области здравоохранения и образования для помощи детям.
+        title: 'Фонд социального развития "Құмай"'
+        description: Фонд социального развития «Құмай» реализует благотворительные проекты в области здравоохранения и образования для помощи детям.
         doSearch: Поиск
         pages:
           - link: "/ru/"
@@ -19,8 +19,8 @@ t:
         withLove: '«Фонд социального развития «Құмай» - с любовью к ближнему.'
 
     kk:
-        title: Фонд социального развития "Құмай"
-        description: Фонд социального развития "Құмай" реализует благотворительные проекты в области здравоохранения и образования для помощи детям.
+        title: '"Құмай" қоғамдық даму қоры'
+        description: '«Құмай» қоғамдық даму қоры денсаулық сақтау және білім беру саласында балаларға көмек көрсету мақсатында қайырымдылық жобаларын жүзеге асыруда.'
         doSearch: Іздеу
         pages:
           - link: "/kk/"
@@ -34,7 +34,7 @@ t:
 
           - link: "/kk/projects/"
             title: "Біздің жобалар"
-        withLove: '«Фонд социального развития «Құмай» - с любовью к ближнему.'
+        withLove: '«Құмай» қоғамдық даму қоры – көршіге деген сүйіспеншілікпен.'
 
 scripts: []
 styles: []
@@ -97,7 +97,7 @@ html
                         
                 .flex.gap-4
                     //- Mobile search
-                    a(href="#search" class="sm:hidden").flex.items-center.gap-2.bg-white.rounded-xl.px-4.py-3
+                    a(href="#search-modal" class="sm:hidden").flex.items-center.gap-2.bg-white.rounded-xl.px-4.py-3
                         i.fa-solid.fa-search.text-primary-black
 
                     //- Desktop lang switcher
@@ -173,8 +173,8 @@ html
                                     i(class=`fa-brands fa-${contact.icon}`).text-2xl.text-primary-gray
 
         //- Modals
-        div(id="search" class="invisible target:visible opacity-0 target:opacity-100 transition-all fixed top-0 left-0 right-0 bottom-0 sm:hidden z-30 group")
-            form(action="search")
+        div(id="search-modal" class="invisible target:visible opacity-0 target:opacity-100 transition-all fixed top-0 left-0 right-0 bottom-0 sm:hidden z-30 group")
+            form(id="search" action=`/${lang}/search/`)
                 input(name="q" placeholder=t[lang].doSearch).bg-white.w-full.p-4
 
             a(href="#" class="absolute top-0 left-0 right-0 bottom-0 bg-black/75 -z-10")

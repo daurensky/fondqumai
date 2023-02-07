@@ -49,10 +49,12 @@ const initSearch = (page: Page, site: Site) => {
     const init = document.createElement('script')
     init.setAttribute('type', 'text/javascript')
     init.innerHTML = `
-      window.addEventListener('DOMContentLoaded', () => {
-        var pagefindUI = new PagefindUI(${JSON.stringify(uiSettings)});
-        pagefindUI.triggerSearch(new URLSearchParams(location.search).get('${searchParam}').trim())
-      });
+      if (new URLSearchParams(location.search).get('${searchParam}')) {
+        window.addEventListener('DOMContentLoaded', () => {
+          var pagefindUI = new PagefindUI(${JSON.stringify(uiSettings)});
+          pagefindUI.triggerSearch(new URLSearchParams(location.search).get('${searchParam}').trim())
+        });
+      };
     `
     document.head.append(script, init)
   }
