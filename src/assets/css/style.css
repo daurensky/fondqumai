@@ -5,3 +5,7 @@
 * {
   -webkit-tap-highlight-color: transparent;
 }
+
+.bullet-active {
+  @apply bg-primary-tiffany opacity-100
+}

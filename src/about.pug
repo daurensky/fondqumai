@@ -1,4 +1,10 @@
 ---
+styles:
+  - "https://cdn.jsdelivr.net/npm/swiper@9.1.0/swiper-bundle.min.css"
+  
+scripts:
+  - "https://cdn.jsdelivr.net/npm/swiper@9.1.0/swiper-bundle.min.js"
+
 ru:
     title: О фонде
     createdFor: '<b>«Фонд социального развития «Құмай»</b> - некоммерческая организация, созданная с целью'
@@ -52,6 +58,16 @@ letters:
     original: '/assets/pdf/letter-1.pdf'
   - thumb: '/assets/img/letter-2-thumb.jpg'
     original: '/assets/pdf/letter-2.pdf'
+  - thumb: '/assets/img/letter-3-thumb.jpg'
+    original: '/assets/pdf/letter-3.pdf'
+  - thumb: '/assets/img/letter-4-thumb.jpg'
+    original: '/assets/pdf/letter-4.pdf'
+  - thumb: '/assets/img/letter-5-thumb.jpg'
+    original: '/assets/pdf/letter-5.pdf'
+  - thumb: '/assets/img/letter-6-thumb.jpg'
+    original: '/assets/pdf/letter-6.pdf'
+  - thumb: '/assets/img/letter-7-thumb.jpg'
+    original: '/assets/pdf/letter-7.pdf'
 ---
 
 section(class="sm:py-16").py-8.space-y-8
@@ -90,7 +106,38 @@ section(class="sm:py-16").py-8
     .max-w-screen-xl.w-full.mx-auto.px-4
         h2.text-2xl.font-medium.mb-8.text-center.font-rubik= ourLetters
 
-        .flex.gap-4.justify-center
-            each letter in letters
-                a(href=letter.original target="_blank")
-                    img(src=letter.thumb alt="Thanksgiving letters").rounded.shadow.border.border-primary-white.max-h-72
+        .overflow-hidden
+          .swiper
+            .swiper-wrapper
+              div(class="hidden sm:flex").swiper-button-prev.text-primary-tiffany
+              div(class="hidden sm:flex").swiper-button-next.text-primary-tiffany
+              div(class="hidden sm:block").swiper-pagination
+
+              each letter in letters
+                .swiper-slide.w-full
+                  a(href=letter.original target="_blank")
+                    img(src=letter.thumb alt="Thanksgiving letter" class="max-h-[600px]").rounded-xl.border.shadow-xl
+
+script
+  | document.addEventListener('DOMContentLoaded', () => {
+  |   const swiper = new Swiper('.swiper', {
+  |     speed: 400,
+  |     spaceBetween: 100,
+  |     effect: 'cards',
+  |     navigation: {
+  |       nextEl: ".swiper-button-next",
+  |       prevEl: ".swiper-button-prev",
+  |     },
+  |     pagination: {
+  |       el: ".swiper-pagination",
+  |       bulletActiveClass: "bullet-active"
+  |     },
+  |     autoplay: {
+  |       delay: 3000,
+  |     },
+  |     cardsEffect: {
+  |       perSlideOffset: 30,
+  |       slideShadows: false,
+  |     }
+  |   })
+  | })
