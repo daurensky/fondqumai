@@ -1,5 +1,5 @@
 ---
-lang: ru
+lang: kk
 title: Тин Челлендж Казахстан
 main_image: /assets/img/projects/matras/1.jpg
 images:
