@@ -1,5 +1,5 @@
 ---
-preview_image: /assets/uploads/unnamed.jpg
+preview_image: /assets/uploads/poliat.jpg
 created_at: 2023-01-30T05:42:14.605Z
 title: ПРЕЗИДЕНТ ФОНДА СОЦИАЛЬНОГО РАЗВИТИЯ «ҚҰМАЙ» ПОСЕТИЛА ОЮЛ «АССОЦИАЦИЯ
   ПАЛЛИАТИВНОЙ ПОМОЩИ ДЕТСКОМУ НАСЕЛЕНИЮ КАЗАХСТАНА» В Г.АЛМАТЫ.
