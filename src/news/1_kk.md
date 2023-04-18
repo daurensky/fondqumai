@@ -1,5 +1,5 @@
 ---
-preview_image: /assets/uploads/unnamed.jpg
+preview_image: /assets/uploads/poliat.jpg
 created_at: 2023-01-30T05:42:57.676Z
 title: «Құмай» Қоғамдық даму қорының президенті Алматы қаласындағы «Қазақстан
   халқының балаларына паллиативтік көмек көрсету қауымдастығы» ММ-де болды.
