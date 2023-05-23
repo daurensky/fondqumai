@@ -66,6 +66,7 @@ site.use(
       rootSelector: '#content',
     },
     ui: false,
+    binary: { version: 'v0.10.5' },
   })
 )
 
