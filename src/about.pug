@@ -70,6 +70,8 @@ letters:
     original: '/assets/pdf/letter-7.pdf'
   - thumb: '/assets/img/letter-8-thumb.png'
     original: '/assets/pdf/letter-8.pdf'
+  - thumb: '/assets/img/letter-9-thumb.png'
+    original: '/assets/pdf/letter-9.pdf'
 ---
 
 section(class="sm:py-16").py-8.space-y-8
@@ -113,11 +115,11 @@ section(class="sm:py-16").py-8
     .max-w-screen-xl.w-full.mx-auto.px-4
         h2.text-2xl.font-medium.mb-8.text-center.font-rubik= ourLetters
 
-        .overflow-hidden
+        .overflow-hidden.relative
+          div(class="hidden sm:flex z-20").swiper-button-prev.text-primary-tiffany
+          div(class="hidden sm:flex z-20").swiper-button-next.text-primary-tiffany
           .swiper
             .swiper-wrapper
-              div(class="hidden sm:flex").swiper-button-prev.text-primary-tiffany
-              div(class="hidden sm:flex").swiper-button-next.text-primary-tiffany
               div(class="hidden sm:block").swiper-pagination
 
               each letter in letters
@@ -131,7 +133,6 @@ script
   |     speed: 400,
   |     spaceBetween: 100,
   |     effect: 'cards',
-  |     mousewheel: true,
   |     navigation: {
   |       nextEl: ".swiper-button-next",
   |       prevEl: ".swiper-button-prev",
