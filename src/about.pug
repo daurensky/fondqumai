@@ -116,8 +116,8 @@ section(class="sm:py-16").py-8
         h2.text-2xl.font-medium.mb-8.text-center.font-rubik= ourLetters
 
         .overflow-hidden.relative
-          div(class="hidden sm:flex z-20").swiper-button-prev.text-primary-tiffany
-          div(class="hidden sm:flex z-20").swiper-button-next.text-primary-tiffany
+          div(class="flex z-20 !pointer-events-auto").swiper-button-prev.text-primary-tiffany.top-4.h-full.left-0.px-6
+          div(class="flex z-20").swiper-button-next.text-primary-tiffany.top-4.h-full.right-0.px-6
           .swiper
             .swiper-wrapper
               div(class="hidden sm:block").swiper-pagination
