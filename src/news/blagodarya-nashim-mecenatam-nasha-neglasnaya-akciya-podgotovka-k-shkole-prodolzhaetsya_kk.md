@@ -1,8 +1,8 @@
 ---
-preview_image: /assets/uploads/AgACAgIAAx0CbKPdxQACA1dlu3LlxkuSmXvUx-uAm4FDVTj3AwACf9ExG-3T2EmMMUFUbUwDOgEAAwIAA3kAAzQE
+preview_image: '/assets/uploads/AgACAgIAAx0CbKPdxQACA1dlu3LlxkuSmXvUx-uAm4FDVTj3AwACf9ExG-3T2EmMMUFUbUwDOgEAAwIAA3kAAzQE'
 created_at: 2024-02-01T10:31:04.774Z
-title: ПАНОРЛАРЫНЫҢ АРҚАСЫНДА БІЗДІҢ ҚҰПИЯ АКЦИЯСЫМЫЗ: «МЕКТЕБКЕ ДАЙЫНДЫҚ» ЖАЛҒАСЫНДА.
-lang: kk
+title: 'ПАНОРЛАРЫНЫҢ АРҚАСЫНДА БІЗДІҢ ҚҰПИЯ АКЦИЯСЫМЫЗ: «МЕКТЕБКЕ ДАЙЫНДЫҚ» ЖАЛҒАСЫНДА.'
+lang: 'kk'
 ---
 
 Суретте балаларын жалғыз өзі тәрбиелеп, асырап отырған Малика есімді үш баланың анасы.
@@ -26,4 +26,3 @@ lang: kk
 ![](/assets/uploads/AgACAgIAAx0CbKPdxQACA1llu3LlfZnPSvNP0ZdZ6SIJzdEhHAACgdExG-3T2El8XsLgw9K6tQEAAwIAA3kAAzQE)
 
 ![](/assets/uploads/AgACAgIAAx0CbKPdxQACA1plu3Llh_OCAAHeaDRfohbn_6XL3ygAAoLRMRvt09hJDspYwAhidK8BAAMCAAN5AAM0BA)
-

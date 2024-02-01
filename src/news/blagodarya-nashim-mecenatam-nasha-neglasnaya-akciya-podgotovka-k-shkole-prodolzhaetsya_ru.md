@@ -1,8 +1,8 @@
 ---
-preview_image: /assets/uploads/AgACAgIAAx0CbKPdxQACA1dlu3LlxkuSmXvUx-uAm4FDVTj3AwACf9ExG-3T2EmMMUFUbUwDOgEAAwIAA3kAAzQE
+preview_image: '/assets/uploads/AgACAgIAAx0CbKPdxQACA1dlu3LlxkuSmXvUx-uAm4FDVTj3AwACf9ExG-3T2EmMMUFUbUwDOgEAAwIAA3kAAzQE'
 created_at: 2024-02-01T10:31:04.774Z
-title: БЛАГОДАРЯ НАШИМ МЕЦЕНАТАМ НАША НЕГЛАСНАЯ АКЦИЯ: «ПОДГОТОВКА К ШКОЛЕ» ПРОДОЛЖАЕТСЯ
-lang: ru
+title: 'БЛАГОДАРЯ НАШИМ МЕЦЕНАТАМ НАША НЕГЛАСНАЯ АКЦИЯ: «ПОДГОТОВКА К ШКОЛЕ» ПРОДОЛЖАЕТСЯ'
+lang: 'ru'
 ---
 
 На фото мама троих детей Малика, которая одна воспитывает и содержит своих детей.
@@ -26,4 +26,3 @@ lang: ru
 ![](/assets/uploads/AgACAgIAAx0CbKPdxQACA1llu3LlfZnPSvNP0ZdZ6SIJzdEhHAACgdExG-3T2El8XsLgw9K6tQEAAwIAA3kAAzQE)
 
 ![](/assets/uploads/AgACAgIAAx0CbKPdxQACA1plu3Llh_OCAAHeaDRfohbn_6XL3ygAAoLRMRvt09hJDspYwAhidK8BAAMCAAN5AAM0BA)
-
